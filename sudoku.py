@@ -1,7 +1,4 @@
 
-'''
-We did not utilize the board and cell classes for our program! :)
-'''
 import pygame, sys
 from sudoku_generator import SudokuGenerator, generate_sudoku, generate_sudoku1
 import copy
