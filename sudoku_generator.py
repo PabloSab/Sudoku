@@ -4,13 +4,6 @@ import math, random
 
 class SudokuGenerator:
     '''
-	create a sudoku board - initialize class variables and set up the 2D board
-	This should initialize:
-	self.row_length		- the length of each row
-	self.removed_cells	- the total number of cells to be removed
-	self.board			- a 2D list of ints to represent the board
-	self.box_length		- the square root of row_length
-
 	Parameters:
     row_length is the number of rows/columns of the board (always 9 for this project)
     removed_cells is an integer value - the number of cells to be removed
@@ -29,7 +22,6 @@ class SudokuGenerator:
 	Returns a 2D python list of numbers which represents the board
 
 	Parameters: None
-	Return: list[list]
     '''
 
     def get_board(self):
@@ -160,10 +152,6 @@ class SudokuGenerator:
         self.fill_box(6, 6)
 
     '''
-    DO NOT CHANGE
-    Provided for students
-    Fills the remaining cells of the board
-    Should be called after the diagonal boxes have been filled
 
 	Parameters:
 	row, col specify the coordinates of the first empty (0) cell
@@ -200,10 +188,6 @@ class SudokuGenerator:
         return False
 
     '''
-    DO NOT CHANGE
-    Provided for students
-    Constructs a solution by calling fill_diagonal and fill_remaining
-
 	Parameters: None
 	Return: None
     '''
@@ -218,8 +202,6 @@ class SudokuGenerator:
     Should be called after the entire solution has been constructed
     i.e. after fill_values has been called
 
-    NOTE: Be careful not to 'remove' the same cell multiple times
-    i.e. if a cell is already 0, it cannot be removed again
 
 	Parameters: None
 	Return: None
@@ -241,8 +223,6 @@ class SudokuGenerator:
 
 
 '''
-DO NOT CHANGE
-Provided for students
 Given a number of rows and number of cells to remove, this function:
 1. creates a SudokuGenerator
 2. fills its values and saves this as the solved state
@@ -256,16 +236,6 @@ removed is the number of cells to clear (set to 0)
 Return: list[list] (a 2D Python list to represent the board)
 '''
 
-
-def generate_sudoku(size, removed):
-    sudoku = SudokuGenerator(size, removed)
-    sudoku.fill_values()
-    board = sudoku.get_board()
-    sol_board = copy.deepcopy(board)
-    sudoku.remove_cells()
-    board = sudoku.get_board()
-    return board
-
 def generate_sudoku1(size, removed):
     sudoku = SudokuGenerator(size, removed)
     sudoku.fill_values()
@@ -275,19 +245,3 @@ def generate_sudoku1(size, removed):
     board = sudoku.get_board()
     return board, sol_board
 
-
-
-# Debugging purposes
-'''
-sudoku = SudokuGenerator(9, 6)
-generated_sudoku, sol = generate_sudoku(9,2)
-sudoku.print_board()
-print()
-for i in generated_sudoku:
-    print(i)
-print('\n')
-for i in sol:
-    print(i)
-
-print(sudoku.valid_in_row(8, 7))
-'''
