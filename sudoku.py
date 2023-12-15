@@ -17,7 +17,7 @@ def main():
 def draw_start_screen(screen):
     Sudoku = SudokuGenerator(9,30)
     Sudoku.fill_values()
-    bg = pygame.image.load('images//sudokubackground.jpg')
+    bg = pygame.image.load('sudokubackground.jpg')
     screen.blit(bg, (0, 0))
     my_font = pygame.font.SysFont('Arial', 50)
     text = my_font.render('Welcome to Sudoku', True, (0, 0, 0))
@@ -45,8 +45,8 @@ def draw_start_screen(screen):
 
 # Draws the losing screen. FUnction is called when you solve a sudoku incorrectly.
 def draw_lose_screen(screen):
-    bg = pygame.image.load('images//sudokubackground.jpg')
-    funny_pic = pygame.image.load('images/lose.png')
+    bg = pygame.image.load('sudokubackground.jpg')
+    funny_pic = pygame.image.load('lose.png')
     funny_pic = pygame.transform.scale(funny_pic, (200, 200))
     screen.blit(bg, (0, 0))
     screen.blit(funny_pic, (350,150))
@@ -68,8 +68,8 @@ def draw_lose_screen(screen):
         pygame.display.update()
 
 def draw_win_screen(screen):
-    bg = pygame.image.load('images//sudokubackground.jpg')
-    funny_pic = pygame.image.load('images/win.jpg')
+    bg = pygame.image.load('sudokubackground.jpg')
+    funny_pic = pygame.image.load('win.jpg')
     funny_pic = pygame.transform.scale(funny_pic, (200, 200))
     screen.blit(bg, (0, 0))
     screen.blit(funny_pic, (350,150))
