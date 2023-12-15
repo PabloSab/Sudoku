@@ -117,7 +117,7 @@ def draw_button(screen, text, button_x, button_y):
 
 
 
-# This method will be used to draw the main screen of the game. Tho I think drawing the grid is done with the board class.
+# This method will be used to draw the main screen of the game. 
 def game_screen(screen, difficulty, board = None):
     count = 0
     if difficulty == 'easy':
@@ -274,8 +274,8 @@ def game_screen(screen, difficulty, board = None):
 
 
 '''
-This method draws the board used to play the main loop of the game. Pablo worked on this method
-and also added colors afterwards so that any 3x3 box has their own unique color to improve readability
+This method draws the board used to play the main loop of the game. 
+Also added colors afterwards so that any 3x3 box has their own unique color to improve readability
 '''
 def draw_board(screen,board):
     colors =[[255,204,153],[255,0,0], [0,255,0],[0,0,255]]
